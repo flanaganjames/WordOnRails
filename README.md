@@ -1,1 +1,1 @@
-Initial port of WordFriendSinatra to a Rails application
+=Initial port of WordFriendSinatra to a Rails application
