@@ -1,34 +1,5 @@
-<%
-aForm = <<-eos
-<div> <table>
-<th>User Name</th> <th>PIN </th>
-
-<form method="post" >
-<tr>
-<td> <input type = \”submit\” name="Open\” value = \”Open\” action = \“/static/usergame/\“ ></td>
-<td> <input type = \“hidden\” name=\”authenticity_token\” value= \”
-eos
-%>
-
-<%=aForm = aForm + form_authenticity_token %>
-
-<%
-aForm = aForm + <<-eos
-\” ></td>
-<td> <input type = "text" name = "ausername" value = "" size = "20" ></td>
-<td> <input type = "text" name = "pin1" value = "" size = "2" ></td>
-<td> <input type = "text" name = "pin2” value = "" size = "2" ></td>
-<td> <input type = "text" name = "pin3" value = "" size = "2" ></td>
-<td> <input type = "text" name = "pin4" value = "" size = "2" ></td>
-</tr>
+    
+<form  method="post">
+<input type="submit" name="Open" value="Open" formaction="/usergame\" >
 </form>
-
-</table></div>
-</body> 
-</html>
-eos
-return aForm
-%>
-
-
 
