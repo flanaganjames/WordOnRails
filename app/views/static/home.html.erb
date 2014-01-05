@@ -1,6 +1,13 @@
     
 <form  method=post>
 <input type=hidden name=authenticity_token value=<%= form_authenticity_token %> >
-<input type=submit name="Open" value=Open formaction=/static/usergames >
+<tr>
+<td> <input type=text name=ausername placeholder=name size=20 </td>
+<td> <input type=text name=pin1 placeholder=pin1 size=2 </td>
+<td> <input type=text name=pin2 placeholder=pin2 size=2 </td>
+<td> <input type=text name=pin3 placeholder=pin3 size=2 </td>
+<td> <input type=text name=pin4 placeholder=pin4 size=2 </td>
+<td> <input type=submit name="Open" value=Open formaction=/static/usergames > </td>
+</tr>
 </form>
 

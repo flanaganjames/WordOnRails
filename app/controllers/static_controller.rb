@@ -4,5 +4,11 @@ class StaticController < ApplicationController
   
   def usergames
   end
+  
+  def resumegame
+  end
+  
+  def newgame
+  end
 
 end
