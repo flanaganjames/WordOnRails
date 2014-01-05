@@ -3,7 +3,7 @@ get "static/home"
 post "static/usercheck"
 post "static/resumegame"
 post "static/askmode"
-post "static/userchoose"
+
 post "static/stub1"
 post "static/stub2"
 resources :users
