@@ -1,0 +1,63 @@
+<%
+timeout = 10000
+message = "this will take about 10 seconds"
+i = 0
+while i < 7
+    timeout = 50000 if $aGame.currentplayertileset[i] == '*'
+    message = "patience! with a * character this takes about 40 seconds" if $aGame.currentplayertileset[i] == '*'
+    i += 1
+end
+
+aForm = <<-eos
+<html>
+<head>
+<title>Generating Results</title>
+
+<script>
+function setPercentage(id, percent)
+{
+div = document.getElementById(id);
+div.style.width = percent;
+}
+
+function donothing()
+{
+}
+</script>
+</head>
+
+<body>
+<div> Helping human player to find possible moves .... #{message}</div>
+
+<div id=\"progress\" style=\"border: 1px solid black;\">
+<div id=\"inner\" style=\"background-color:green; width:0%\">&nbsp;</div>
+</div>
+
+<script>
+var i = 0;
+var percentage;
+var delay = 1000
+
+setInterval(function()
+{
+percentage = 100*i/#{timeout} + '%';
+setPercentage('inner',percentage)
+i += delay
+}, delay)
+
+setTimeout(function()
+{clearInterval(interval)}, #{timeout})
+
+var form = document.createElement(\"form\");
+form.setAttribute(\"method\", \"POST\");
+form.setAttribute(\"action\", \"/resultsPvC\");
+setTimeout(function(){form.submit()}, #{timeout});
+</script>
+
+</body>
+</html>
+eos
+
+return aForm
+%>
+
