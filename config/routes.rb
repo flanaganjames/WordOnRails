@@ -1,5 +1,6 @@
 WordsOnRails::Application.routes.draw do
   get "static/home"
+  post "static/usergame"
   resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
