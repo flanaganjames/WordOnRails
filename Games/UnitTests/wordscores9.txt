@@ -1,0 +1,36 @@
+---------------
+---------------
+---------------
+---------------
+---------------
+-----------tho-
+----------sweet
+------goalie---
+------r-robe---
+-----ma---stang
+------c-----nu-
+---moped-----nu
+---ire-a-------
+---r-d-w-okeh--
+---i---tun-----
+tiles1: gpais*r
+tiles2: jzdtnft
+tilesr: aaaabcdeeeeefiiiiilllnoooqrssuvvxyy
+mode: PlayerVsComputer
+score1: 240
+score2: 120
+---W--L-L--W---
+--l--w---w--l--
+-l--l-----l--l-
+W--L---w---L--W
+--l---l-l---l--
+-w---L---L---w-
+L---l-----l---L
+---w-------w---
+L---l-----l---L
+-w---L---L*--w-
+--l---l-l---l--
+W--L---w---L--W
+-l--l-----l--l-
+--l--w---w--l--
+---W--L-L--W---

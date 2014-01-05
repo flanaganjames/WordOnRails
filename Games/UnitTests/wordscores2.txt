@@ -1,0 +1,43 @@
+---------------
+-------------f-
+----------m--i-
+ti-------fazed-
+e-------zap--g-
+ever----o----e-
+n---j--pong----
+s--hello---k---
+ya--s--x--pilot
+-botts---rat-fa
+b---e-hi-ice--m
+u--adhesives--e
+tour-----e----d
+e--triad-reel--
+---y--wow--ma--
+tiles1: dbboter
+tiles2: izuags*
+tilesr: aaaaaaaaacdddeeeeeeeeeeeffggghhiiiiiiiijkllllmmnnnnnnoooooooppqrrrrsssstttttuuuvwwyyz*
+mode: PlayerVsComputer
+score1: 0
+score2: 0
+---W--L-L--W---
+--l--w---w--l--
+-l--l-----l--l-
+W--L---w---L--W
+--l---l-l---l--
+-w---L---L---w-
+L---l-----l---L
+---w-------w---
+L---l-----l---L
+-w---L---L---w-
+--l---l-l---l--
+W--L---w---L--W
+-l--l-----l--l-
+--l--w---w--l--
+---W--L-L--W---
+quags
+2
+1
+right
+direct 10, supplement 1, no score for *
+
+

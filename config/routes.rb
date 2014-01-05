@@ -1,8 +1,11 @@
 WordsOnRails::Application.routes.draw do
 get "static/home"
-post "static/usergames"
+post "static/usercheck"
 post "static/resumegame"
-post "static/newgame"
+post "static/askmode"
+post "static/userchoose"
+post "static/stub1"
+post "static/stub2"
 resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
