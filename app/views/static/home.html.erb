@@ -1,31 +1,34 @@
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd" >
-
-<form method="post">
-<html xmlns= "http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"> 
-
-<head> <title>Welcome</title> </head> <body>
-<div> Welcome to The Arcane Word </div>
-
-
+<%
+aForm = <<-eos
 <div> <table>
 <th>User Name</th> <th>PIN </th>
+
+<form method="post" >
 <tr>
+<td> <input type = \”submit\” name="Open\” value = \”Open\” action = \“/static/usergame/\“ ></td>
+<td> <input type = \“hidden\” name=\”authenticity_token\” value= \”
+eos
+%>
 
+<%=aForm = aForm + form_authenticity_token %>
 
-<td> <input type = "text" name = "ausername" value = "" size = "20"</td>
-<td> <input type = "text" name = "pin1" value = "" size = "2"</td>
-<td> <input type = "text" name = "pin2” value = "" size = "2"</td>
-<td> <input type = "text" name = "pin3" value = "" size = "2"</td>
-<td> <input type = "text" name = "pin4" value = "" size = "2"</td>
-
-<td> <input type = "submit" name="Open" value = "Open" form action = /static/usergame/> </td>
-<td> <input name=”authenticity_token” value= ”<%=form_authenticity_token %>” type= “hidden” >  </td>
-
+<%
+aForm = aForm + <<-eos
+\” ></td>
+<td> <input type = "text" name = "ausername" value = "" size = "20" ></td>
+<td> <input type = "text" name = "pin1" value = "" size = "2" ></td>
+<td> <input type = "text" name = "pin2” value = "" size = "2" ></td>
+<td> <input type = "text" name = "pin3" value = "" size = "2" ></td>
+<td> <input type = "text" name = "pin4" value = "" size = "2" ></td>
+</tr>
+</form>
 
 </table></div>
-</body> </form>
+</body> 
 </html>
+eos
+return aForm
+%>
 
 
 
