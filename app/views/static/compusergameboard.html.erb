@@ -1,0 +1,91 @@
+</body>
+<head> <style> .jander2 {font-weight: bold;} </style> <title>Unchanged Board</title> </head>
+<body>
+<form  method=post>
+<input type=hidden name=authenticity_token value=<%= form_authenticity_token %> >
+
+<div> <table> <tr>
+<td> Computer  </td>
+<td bgcolor=#0000FF > <font color=white> <%=$aGame.scoreplayer1%> </font> </td>
+<td> vs.  </td>
+<td> Player  </td>
+<td bgcolor=#00FF00>  <%=$aGame.scoreplayer2%> </td>
+<td> || </td>
+<td> Tiles Remaining:  </td>
+<td >  <%=$aGame.tilesremain.size%> </td>
+</tr> </table> </div>
+<div> <table> <td> Your Tiles </td>
+<% 
+i = 0
+while i < 7 %>
+<td> <input type=text disabled=disabled size=1 name=tile<%=i%> value= <%=$aGame.currentplayertileset[i]%> </td>
+<% i += 1
+end
+%>
+</tr> </table> </div>
+<div> <table>
+<tr>
+<td> Your Move </td>
+<td> <input type=text name=word placeholder=word size=10 </td>
+<td> <input type=text name=xcoordinate placeholder=row size=2</td>
+<td> <input type=text name=ycoordinate placeholder=col size=2</td>
+<td> <input type=text name=direction placeholder=direction size=8</td>
+<input type=submit value=PlaceMove formaction=/static/manualmovePvC/>
+</tr> </table></div>
+
+<table>
+<tr> <td> ... </td> 
+<%
+i = 0
+while i < 15 %>
+ <td><%=i%></td>
+<% i += 1
+end 
+i = 0 %>
+</tr>
+<% while i < 15 %>
+<tr>
+<td><%=i%></td>
+<% j = 0
+while j < 15  %>
+<td
+<% if ($aWordfriend.myboard.newgrid[i][j] == 'n')  then %>
+bgcolor=#0000FF" 
+<% end %>
+<% if ($aWordfriend.myboard.lettergrid[i][j] != '-') then %> 
+bgcolor=#000000" 
+<% end %>
+>
+<input type=text class=jander2 disabled=disabled 
+<% if $aWordfriend.myboard.lettergrid[i][j] == '-' && $aWordfriend.myboard.scoregrid[i][j]  == 'W' %>
+placeholder=tw
+<% elsif $aWordfriend.myboard.lettergrid[i][j] == '-' && $aWordfriend.myboard.scoregrid[i][j] == 'w' %>
+placeholder=dw
+<% elsif $aWordfriend.myboard.lettergrid[i][j] == '-' && $aWordfriend.myboard.scoregrid[i][j] == 'L' %>
+placeholder=tl
+<% elsif $aWordfriend.myboard.lettergrid[i][j] == '-' && $aWordfriend.myboard.scoregrid[i][j] == 'l' %>
+placeholder=dl
+<% else %>
+value=<%=$aWordfriend.myboard.lettergrid[i][j] %>
+<% end %>
+size=1 name=#{@posname[i][j]}
+<% j += 1 %>
+</td>
+<% end %>
+</tr>
+<% i += 1
+end %>
+
+</table></div>
+
+<div> <input type=submit value=HelpMeOut formaction=/static/gettingresultsPvC/> </div>
+
+</form> 
+
+
+
+
+
+
+
+

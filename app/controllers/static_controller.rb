@@ -19,18 +19,42 @@ class StaticController < ApplicationController
           render template: "static/userchoose" #ask if resume > static/resume or new > static/askmode
       else
           $aGame.initializegame
-          render template: "stub2"  #ask mode
+          render template: "static/askmode"
       end
 
   end
   
-
-  
-  
   def askmode
       $aGame.initializegame
-      render stub2 #ask mode
+      render template: "static/askmode"  #ask if PvC > static/pvcgame or Cheat > static/cheatgame
   end
+  
+  def pvcgame
+      $aGame.initializegamePvC
+      $aGame.firstmove
+      i= 0
+      @posname = {}
+      while i < 15
+          j = 0
+          lhash = {}
+          while j < 15
+              lhash[j] = ":i" + i.to_s + "j" + j.to_s
+              j += 1
+          end
+          @posname[i] = lhash
+          i += 1
+      end
+      render template: "static/compusergameboard"
+  end
+
+  def cheatgame
+
+  end
+  
+  def resumegame
+      
+  end
+
   
   def stub1
   end

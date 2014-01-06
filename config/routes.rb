@@ -3,6 +3,8 @@ get "static/home"
 post "static/usercheck"
 post "static/resumegame"
 post "static/askmode"
+post "static/pvcgame"
+post "static/cheatgame"
 
 post "static/stub1"
 post "static/stub2"
