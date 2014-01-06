@@ -3,12 +3,16 @@ get "static/home"
 post "static/usercheck"
 post "static/askmode"
 post "static/pvcgame"
-post "/static/manualmovepvc" 
+post "static/manualmovepvc"
+post "static/revertpvc"
+post "static/gettingresultspvc" #started but not working; need to put authentication security in generated form in showberightbackpvc
 
-post "/static/revertpvc" #not implemented in controller yet
-post "/static/nextmoveplayer1" #not implemented in controller yet
-post "/static/gettingresultspvc" #started but not working; need to put authentication security in generated form in showberightbackpvc
-post "/static/showresultspvc" #not implemented in controller yet
+post "static/nextmoveplayer1" #in process
+
+post "static/shownextmoveplayer1" #started but not working; need to put authentication security in generated form in showberightbackpvc
+
+
+post "static/showresultspvc" #not implemented in controller yet
 post "static/resumegame" #not implemented in controller yet
 post "static/cheatgame"  #not implemented in controller yet
 

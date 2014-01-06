@@ -24,7 +24,7 @@ div.style.width = percent;
 </head>
 
 <body>
-<div> Finding possible moves .... <%=message%></div>
+<div> Computer Player is planning its next move .... <%=message%></div>
 
 <div id=progress style=border: 1px solid black;>
 <div id=inner style=background-color:green; width:0% >&nbsp;</div>
@@ -49,7 +49,7 @@ setTimeout(function()
 
 var form = document.createElement("form");
 form.setAttribute("method", "POST");
-form.setAttribute("action", “/static/showresultspvc”);
+form.setAttribute("action", “/static/shownextmoveplayer1”);
 setTimeout(function(){form.submit()}, <%=timeout%>);
 </script>
 

@@ -109,6 +109,31 @@ def manualmovepvc  #posted from "static/compusergameboard"
       render template: "static/compusergameboard"
   end
   
+  def nextmoveplayer1
+      
+      $aGame.nextmovePlayer1
+      $task = Thread.new {
+          $aWordfriend.wordfind}
+      render template: "static/showberightbackcomp"
+  end
+  
+  def shownextmoveplayer1
+      i=0
+      @posname = {}
+      while i < 15
+          j = 0
+          lhash = {}
+          while j < 15
+              lhash[j] = ":i" + i.to_s + "j" + j.to_s
+              j += 1
+          end
+          @posname[i] = lhash
+          i += 1
+      end
+      $aGame.finishnextmovePlayer1
+      render template: "static/compusergameboard"
+  end
+  
   def gettingresultspvc  #posted from "static/compusergameboard"
       i=0
       @posname = {}
