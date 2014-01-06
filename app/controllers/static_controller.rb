@@ -83,9 +83,62 @@ def manualmovepvc  #posted from "static/compusergameboard"
       end
       
   end
+
+  def revertpvc
+      i=0
+      @posname = {}
+      while i < 15
+          j = 0
+          lhash = {}
+          while j < 15
+              lhash[j] = ":i" + i.to_s + "j" + j.to_s
+              j += 1
+          end
+          @posname[i] = lhash
+          i += 1
+      end
+      
+      @tilename = {}
+      i = 0
+      while i < 7
+          @tilename[i] = "tile" + i.to_s
+          i += 1
+      end
+      
+      $aGame.revertPvC
+      render template: "static/compusergameboard"
+  end
   
   def gettingresultspvc  #posted from "static/compusergameboard"
+      i=0
+      @posname = {}
+      while i < 15
+          j = 0
+          lhash = {}
+          while j < 15
+              lhash[j] = ":i" + i.to_s + "j" + j.to_s
+              j += 1
+          end
+          @posname[i] = lhash
+          i += 1
+      end
       
+      @tilename = {}
+      i = 0
+      while i < 7
+          @tilename[i] = "tile" + i.to_s
+          i += 1
+      end
+      
+      $aGame.currentplayertileset = $aGame.tilesplayer2
+      $aWordfriend.updatevalues($aGame.tilesplayer2)
+      $task = Thread.new {
+          $aWordfriend.wordfind}
+      render template: "static/showberightbackpvc"
+  end
+  
+  def showresultspvc  #called from showberightback after timeout delay
+
   end
 
   def resumegame

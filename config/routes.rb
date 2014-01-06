@@ -4,9 +4,11 @@ post "static/usercheck"
 post "static/askmode"
 post "static/pvcgame"
 post "/static/manualmovepvc" 
-post "/static/gettingresultspvc" #not implemented in controller yet
+
 post "/static/revertpvc" #not implemented in controller yet
 post "/static/nextmoveplayer1" #not implemented in controller yet
+post "/static/gettingresultspvc" #started but not working; need to put authentication security in generated form in showberightbackpvc
+post "/static/showresultspvc" #not implemented in controller yet
 post "static/resumegame" #not implemented in controller yet
 post "static/cheatgame"  #not implemented in controller yet
 

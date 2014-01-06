@@ -1,5 +1,4 @@
-<%
-timeout = 10000
+<% timeout = 10000
 message = "this will take about 10 seconds"
 i = 0
 while i < 7
@@ -7,9 +6,9 @@ while i < 7
     message = "patience! with a * character this takes about 40 seconds" if $aGame.currentplayertileset[i] == '*'
     i += 1
 end
+%>
 
-aForm = <<-eos
-<html>
+</body>
 <head>
 <title>Generating Results</title>
 
@@ -25,15 +24,12 @@ div.style.width = percent;
 </head>
 
 <body>
-<div> Finding possible moves .... #{message}</div>
+<div> Finding possible moves .... <%=message%></div>
 
-<div id=\"progress\" style=\"border: 1px solid black;\">
-<div id=\"inner\" style=\"background-color:green; width:0%\">&nbsp;</div>
+<div id=progress style=border: 1px solid black;>
+<div id=inner style=background-color:green; width:0% >&nbsp;</div>
 </div>
-eos
 
-
-aForm = aForm + <<-eos
 <script>
 var i = 0;
 var j = 0;
@@ -49,18 +45,11 @@ i += delay;
 
 
 setTimeout(function()
-{clearInterval(interval)}, #{timeout})
+{clearInterval(interval)}, <%=timeout%>)
 
-var form = document.createElement(\"form\");
-form.setAttribute(\"method\", \"POST\");
-form.setAttribute(\"action\", \"/results\");
-setTimeout(function(){form.submit()}, #{timeout});
+var form = document.createElement("form");
+form.setAttribute("method", "POST");
+form.setAttribute("action", “/static/showresultspvc”);
+setTimeout(function(){form.submit()}, <%=timeout%>);
 </script>
-
-</body>
-</html>
-eos
-
-return aForm
-%>
 
