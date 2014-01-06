@@ -1,23 +1,23 @@
 ---------------
--------u-------
--------t-------
--------t-------
--------e-------
--------r-------
--------e-------
------nod-------
 ---------------
 ---------------
 ---------------
 ---------------
 ---------------
+-------l-------
+---louse-------
+-------a-------
+-------n-------
 ---------------
 ---------------
-tiles1: olxmiv*
-tiles2: oeiione
-tilesr: aaaaaaaaabbccdddeeeeeeeeffggghhiiiiiijklllmnnnnnoooooppqrrrrrssssttttuuuvwwyyz*
+---------------
+---------------
+---------------
+tiles1: aagnava
+tiles2: nynoaly
+tilesr: aaaabbccddddeeeeeeeeeeeffgghhiiiiiiiiijkllmmnnnooooooppqrrrrrrsssttttttuuuvwwxz**
 mode: PlayerVsComputer
-score1: 18
+score1: 14
 score2: 0
 ---W--L-L--W---
 --l--w---w--l--

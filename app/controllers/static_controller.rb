@@ -84,6 +84,10 @@ def manualmovepvc  #posted from "static/compusergameboard"
       
   end
 
+  def showinvalidmove
+      
+  end
+
   def revertpvc
       i=0
       @posname = {}

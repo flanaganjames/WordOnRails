@@ -5,6 +5,7 @@ post "static/askmode"
 post "static/pvcgame"
 post "static/manualmovepvc"
 post "static/revertpvc"
+post "static/showinvalidmove"
 post "static/gettingresultspvc" #started but not working; need to put authentication security in generated form in showberightbackpvc
 
 post "static/nextmoveplayer1" #in process
