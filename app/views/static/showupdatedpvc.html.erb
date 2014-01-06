@@ -9,7 +9,7 @@
 <td bgcolor=#0000FF > <font color=white> <%=$aGame.scoreplayer1%> </font> </td>
 <td> vs.  </td>
 <td> Player  </td>
-<td bgcolor=#00FF00>  <%=$aGame.scoreplayer2%> </td>
+<td bgcolor=#00FF00>  <%=$aGame.scoreplayer2 + $aGame.scoreadd%> </td>
 <td> || </td>
 <td> Tiles Remaining:  </td>
 <td >  <%=$aGame.tilesremain.size%> </td>
@@ -19,26 +19,23 @@
 i = 0
 while i < 7 %>
 <td> <input type=text disabled=disabled size=1 name=tile<%=i%> value= 
-<% if $aGame.currentplayertileset[i]then %>
+<% if $aGame.currentplayertileset[i] then %>
 <%=$aGame.currentplayertileset[i]%>
 <% else %>
 -
 <% end %>
-
+</td>
 <% i += 1
 end
 %>
 </tr> </table> </div>
 <div> <table>
 <tr>
-<td> Your Move </td>
-<td> <input type=text name=word placeholder=word size=10 </td>
-<td> <input type=text name=xcoordinate placeholder=row size=2</td>
-<td> <input type=text name=ycoordinate placeholder=col size=2</td>
-<td> <input type=text name=direction placeholder=direction size=8</td>
-<input type=submit value=PlaceMove formaction=/static/manualmovepvc>
+<td> Choose: </td>
+<td> <input type=submit value=UndoMove formaction=/static/revertpvc>  </td>
+<td> <input type=submit value=AcceptMove formaction=/static/nextmoveplayer1>  </td>
 </tr> </table></div>
-
+<th> Board if Move Accepted </th>
 <table>
 <tr> <td> ... </td> 
 <%
@@ -84,7 +81,6 @@ end %>
 
 </table></div>
 
-<div> <input type=submit value=HelpMeOut formaction=/static/gettingresultspvc> </div>
 
 </form> 
 

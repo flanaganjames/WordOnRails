@@ -1,10 +1,16 @@
 WordsOnRails::Application.routes.draw do
 get "static/home"
 post "static/usercheck"
-post "static/resumegame"
 post "static/askmode"
 post "static/pvcgame"
-post "static/cheatgame"
+post "/static/manualmovepvc" 
+post "/static/gettingresultspvc" #not implemented in controller yet
+post "/static/revertpvc" #not implemented in controller yet
+post "/static/nextmoveplayer1" #not implemented in controller yet
+post "static/resumegame" #not implemented in controller yet
+post "static/cheatgame"  #not implemented in controller yet
+
+
 
 post "static/stub1"
 post "static/stub2"

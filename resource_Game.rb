@@ -44,6 +44,7 @@ class Game
         $allowedcharacters = 'abcdefghijklmnopqrstuvwxyz'
         $maxallowed = 25
         $stopafter = 2
+        $aBlank = ""
     end
     
     

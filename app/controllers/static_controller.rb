@@ -47,12 +47,53 @@ class StaticController < ApplicationController
       render template: "static/compusergameboard"
   end
 
-  def cheatgame
-
+def manualmovepvc  #posted from "static/compusergameboard"
+      i=0
+      @posname = {}
+      while i < 15
+          j = 0
+          lhash = {}
+          while j < 15
+              lhash[j] = ":i" + i.to_s + "j" + j.to_s
+              j += 1
+          end
+          @posname[i] = lhash
+          i += 1
+      end
+      @tilename = {}
+      i = 0
+      while i < 7
+          @tilename[i] = "tile" + i.to_s
+          i += 1
+      end
+      @word = params["word"]
+      @xcoordinate = params["xcoordinate"]
+      @ycoordinate = params["ycoordinate"]
+      @direction = params["direction"]
+      aSW = ScrabbleWord.new(@word, @xcoordinate.to_i, @ycoordinate.to_i, @direction, 0, 0)
+      $aWordfriend.updatevalues($aGame.tilesplayer2)
+      status = $aWordfriend.manualwordtest(aSW) #this changes scoregrid if  a '*' to be used. Be sure to roll back if move not accepted
+      if status
+          $aGame.placewordfromtiles2(aSW)
+          $aGame.saveboard
+          render template: "static/showupdatedpvc"
+          else
+          dummy = 0
+          render template: "static/showinvalidmove"  #for some reason this cannot be the first statement after else
+      end
+      
   end
   
+  def gettingresultspvc  #posted from "static/compusergameboard"
+      
+  end
+
   def resumegame
       
+  end
+
+  def cheatgame
+    
   end
 
   
