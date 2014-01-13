@@ -166,8 +166,48 @@ def manualmovepvc  #posted from "static/compusergameboard"
       render template: "static/showberightbackpvc"
   end
   
-  def showresultspvc  #called from showberightback after timeout delay
+  def showresultspvc  #called from showberightback
 
+  end
+  
+  def showupdatedpvcfind  #called from showresultspvc
+      i=0
+      @posname = {}
+      while i < 15
+          j = 0
+          lhash = {}
+          while j < 15
+              lhash[j] = ":i" + i.to_s + "j" + j.to_s
+              j += 1
+          end
+          @posname[i] = lhash
+          i += 1
+      end
+      
+      @tilename = {}
+      i = 0
+      while i < 7
+          @tilename[i] = "tile" + i.to_s
+          i += 1
+      end
+      
+      @choice = params["choice"]
+      @word = params["word"+@choice.to_s]
+      @xcoordinate = params["xcoordinate"+@choice.to_s]
+      @ycoordinate = params["ycoordinate"+@choice.to_s]
+      @direction = params["direction"+@choice.to_s]
+      @score = params["score"+@choice.to_s]
+      @supplement = params["supplement"+@choice.to_s]
+      
+      aSW = ScrabbleWord.new(@word, @xcoordinate.to_i, @ycoordinate.to_i, @direction, @score.to_i, @supplement.to_i)
+      
+      $aGame.placewordfromtiles2(aSW)
+  end
+  
+  def revertpvcfind
+      $aGame.revertPvC
+      render template: "showresultspvc"
+      
   end
 
   def resumegame

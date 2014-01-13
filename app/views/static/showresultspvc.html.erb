@@ -1,0 +1,25 @@
+<head> <title>Results</title> </head>
+
+
+<form  method=post>
+<input type=hidden name=authenticity_token value=<%= form_authenticity_token %> >
+
+<div> <table>
+<th>Total</th> <th>Direct</th> <th>Supplement</th> <th>Word</th> <th>Row</th> <th>Col</th> <th>Drx</th> <th>Choose</th>
+
+<% $aWordfriend.possiblewords.take(100).each_index {|i| aSW = $aWordfriend.possiblewords[i] %>
+<tr>
+<td> <input type=text name=scoretotal<%=i%> value=<%=aSW.score + aSW.supplement%> size=4</td>
+<td> <input type=text name=score<%=i%> value=<%=aSW.score%> size=4</td>
+<td> <input type=text name=supplement<%=i%> value=<%=aSW.supplement%> size=4</td>
+<td> <input type=text name=word<%=i%> value=<%=aSW.astring%> size=15 </td>
+<td> <input type=text name=xcoordinate<%=i%> value=<%=aSW.xcoordinate%> size=2</td>
+<td> <input type=text name=ycoordinate<%=i%> value=<%=aSW.ycoordinate%> size=2</td>
+<td> <input type=text name=direction<%=i%> value=<%=aSW.direction%> size=4</td>
+<td> <input type=submit name=choice value=<%=i%> formaction=/static/updatedpvcfind> </td>
+</tr>
+<% } %>
+
+</table></div>
+
+</form>

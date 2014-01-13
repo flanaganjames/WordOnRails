@@ -8,48 +8,12 @@ while i < 7
 end
 %>
 
-</body>
-<head>
-<title>Generating Results</title>
-
-<script>
-function setPercentage(id, percent)
-{
-div = document.getElementById(id);
-div.style.width = percent;
-
-}
-
-</script>
-</head>
-
-<body>
 <div> Finding possible moves .... <%=message%></div>
 
-<div id=progress style=border: 1px solid black;>
-<div id=inner style=background-color:green; width:0% >&nbsp;</div>
-</div>
-
-<script>
-var i = 0;
-var j = 0;
-var percentage;
-var delay = 1000;
-
-setInterval(function()
-{
-percentage = 100*i/<%=timeout%> + '%';
-setPercentage('inner',percentage);
-i += delay;
-}, delay)
-
-
-setTimeout(function()
-{clearInterval(interval)}, <%=timeout%>)
-
-var form = document.createElement("form");
-form.setAttribute("method", "POST");
-form.setAttribute("action", “/static/showresultspvc”);
-setTimeout(function(){form.submit()}, <%=timeout%>);
-</script>
+<form  method=post>
+<input type=hidden name=authenticity_token value=<%= form_authenticity_token %> >
+<tr>
+<td> <input type=submit name=getresults value=GetResults formaction=/static/showresultspvc > </td>
+</tr>
+</form>
 

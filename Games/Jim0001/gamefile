@@ -4,20 +4,20 @@
 ---------------
 ---------------
 ---------------
--------l-------
----louse-------
--------a-------
--------n-------
 ---------------
 ---------------
 ---------------
 ---------------
 ---------------
-tiles1: aagnava
-tiles2: nynoaly
-tilesr: aaaabbccddddeeeeeeeeeeeffgghhiiiiiiiiijkllmmnnnooooooppqrrrrrrsssttttttuuuvwwxz**
+---------------
+---------------
+---------------
+---------------
+tiles1: reaaetd
+tiles2: oeifirh
+tilesr: aaaaaaabbccdddeeeeeeeeefggghiiiiiiijkllllmmnnnnnnoooooooppqrrrrsssstttttuuuuvvwwxyyz**
 mode: PlayerVsComputer
-score1: 14
+score1: 0
 score2: 0
 ---W--L-L--W---
 --l--w---w--l--

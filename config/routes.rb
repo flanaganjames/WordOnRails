@@ -6,14 +6,17 @@ post "static/pvcgame"
 post "static/manualmovepvc"
 post "static/revertpvc"
 post "static/showinvalidmove"
-post "static/gettingresultspvc" #started but not working; need to put authentication security in generated form in showberightbackpvc
+post "static/gettingresultspvc" #working as manual push input button
+post "static/showresultspvc"
+post "static/showupdatedpvcfind"
+post "static/revertpvcfind"
 
 post "static/nextmoveplayer1" #in process
 
 post "static/shownextmoveplayer1" #started but not working; need to put authentication security in generated form in showberightbackpvc
 
 
-post "static/showresultspvc" #not implemented in controller yet
+
 post "static/resumegame" #not implemented in controller yet
 post "static/cheatgame"  #not implemented in controller yet
 
