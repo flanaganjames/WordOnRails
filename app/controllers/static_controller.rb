@@ -170,7 +170,7 @@ def manualmovepvc  #posted from "static/compusergameboard"
 
   end
   
-  def showupdatedpvcfind  #called from showresultspvc
+  def updatedpvcfind  #called from showresultspvc
       i=0
       @posname = {}
       while i < 15

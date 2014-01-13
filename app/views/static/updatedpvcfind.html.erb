@@ -1,0 +1,94 @@
+</body>
+<head> <style> .jander2 {font-weight: bold;} </style> <title>Unchanged Board</title> </head>
+<body>
+<form  method=post>
+<input type=hidden name=authenticity_token value=<%= form_authenticity_token %> >
+
+<div> <table> <tr>
+<td> Computer  </td>
+<td bgcolor=#0000FF > <font color=white> <%=$aGame.scoreplayer1%> </font> </td>
+<td> vs.  </td>
+<td> Player  </td>
+<td bgcolor=#00FF00>  <%=$aGame.scoreplayer2 + $aGame.scoreadd%> </td>
+<td> || </td>
+<td> Tiles Remaining:  </td>
+<td >  <%=$aGame.tilesremain.size%> </td>
+</tr> </table> </div>
+<div> <table> <td> Your Tiles </td>
+<% 
+i = 0
+while i < 7 %>
+<td> <input type=text disabled=disabled size=1 name=tile<%=i%> value= 
+<% if $aGame.currentplayertileset[i] then %>
+<%=$aGame.currentplayertileset[i]%>
+<% else %>
+-
+<% end %>
+</td>
+<% i += 1
+end
+%>
+</tr> </table> </div>
+<div> <table>
+<tr>
+<td> Choose: </td>
+<td> <input type=submit value=UndoMove formaction=/static/revertpvcfind>  </td>
+<td> <input type=submit value=AcceptMove formaction=/static/nextmoveplayer1>  </td>
+</tr> </table></div>
+<th> Board if Move Accepted </th>
+<table>
+<tr> <td> ... </td> 
+<%
+i = 0
+while i < 15 %>
+ <td><%=i%></td>
+<% i += 1
+end 
+i = 0 %>
+</tr>
+<% while i < 15 %>
+<tr>
+<td><%=i%></td>
+<% j = 0
+while j < 15  %>
+<td
+<% if ($aWordfriend.myboard.newgrid[i][j] == 'n')  then %>
+bgcolor=#0000FF" 
+<% end %>
+<% if ($aWordfriend.myboard.lettergrid[i][j] != '-') then %> 
+bgcolor=#000000" 
+<% end %>
+>
+<input type=text class=jander2 disabled=disabled 
+<% if $aWordfriend.myboard.lettergrid[i][j] == '-' && $aWordfriend.myboard.scoregrid[i][j]  == 'W' %>
+
+placeholder=tw
+<% elsif $aWordfriend.myboard.lettergrid[i][j] == '-' && $aWordfriend.myboard.scoregrid[i][j] == 'w' %>
+placeholder=dw
+<% elsif $aWordfriend.myboard.lettergrid[i][j] == '-' && $aWordfriend.myboard.scoregrid[i][j] == 'L' %>
+placeholder=tl
+<% elsif $aWordfriend.myboard.lettergrid[i][j] == '-' && $aWordfriend.myboard.scoregrid[i][j] == 'l' %>
+placeholder=dl
+<% else %>
+value=<%=$aWordfriend.myboard.lettergrid[i][j] %>
+<% end %>
+size=1 name=#{@posname[i][j]}
+<% j += 1 %>
+</td>
+<% end %>
+</tr>
+<% i += 1
+end %>
+
+</table></div>
+
+
+</form> 
+
+
+
+
+
+
+
+

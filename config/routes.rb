@@ -8,7 +8,7 @@ post "static/revertpvc"
 post "static/showinvalidmove"
 post "static/gettingresultspvc" #working as manual push input button
 post "static/showresultspvc"
-post "static/showupdatedpvcfind"
+post "static/updatedpvcfind"
 post "static/revertpvcfind"
 
 post "static/nextmoveplayer1" #in process
