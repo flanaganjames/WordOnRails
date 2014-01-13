@@ -1,0 +1,26 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265
+{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\fs22 \cf0 \CocoaLigature0 -<form  method=post>\
+-<input type=hidden name=authenticity_token value=<%= form_authenticity_token %> >\
+-\
+-<div> <table>\
+-<th>Total</th> <th>Direct</th> <th>Supplement</th> <th>Word</th> <th>Row</th> <th>Col</th> <th>Drx</th>\
+-\
+-<% $aWordfriend.possiblewords.take(100).each_index \{|i| aSW = $aWordfriend.possiblewords[i] %>\
+-<tr>\
+-<td> <input type=text name=scoretotal<%=i%> value=<%=aSW.score + aSW.supplement%> size=4</td>\
+-<td> <input type=text name=score<%=i%> value=<%=aSW.score%> size=4</td>\
+-<td> <input type=text name=supplement<%=i%> value=<%=aSW.supplement%> size=4</td>\
+-<td> <input type=text name=word<%=i%> value=<%=aSW.astring%> size=15 </td>\
+-<td> <input type=text name=xcoordinate<%=i%> value=<%=aSW.xcoordinate%> size=2</td>\
+-<td> <input type=text name=ycoordinate<%=i%> value=<%=aSW.ycoordinate%> size=2</td>\
+-<td> <input type=text name=direction<%=i%> value=<%=aSW.direction%> size=4</td>\
+-<td> <input type=submit name=choice value=<%=i%> formaction=/static/updatedpvcfind> </td>\
+-</tr>\
+-<% \} %>\
+-\
+-</table></div>}
